@@ -1,0 +1,37 @@
+﻿@model List<NewsApi.Models.ArticleModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="form-control">
+    @foreach(var item in Model)
+    {
+        <section class="section mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-m-md-auto">
+                        <div>
+                            <img   width="400" height="400"  class="img-fluid" src="@item.urlToImage">
+                        </div>
+                    </div>
+                    <div class="m-md-auto align-self-auto d-flex align-align-items-center mt-4 mt-md-0">
+                        <div>
+                            <h2>@item.title</h2>
+                            <p class="margin-top-5">@item.content</p>
+                            <div class="row">
+                                <div class="col-m-md-auto">
+                                    <p><i class=""></i>@item.publishedAt.ToString("yyyy.dd.MM")</p>
+
+                                </div>
+                                <div class="col-md-auto">
+                                    <p>@item.author</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+</div>
